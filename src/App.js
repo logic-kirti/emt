@@ -1,7 +1,7 @@
 
 import './App.css';
 import * as React from 'react';
-import {Routes, Route} from 'react-router-dom';
+import {HashRouter, Routes, Route, Link} from 'react-router-dom';
 import Login from "./components/Login.js";
 import Home  from "./components/Home.js";
 import About from "./components/About.js";
@@ -29,8 +29,8 @@ function App() {
   return (
       
       <Routes >
-          <Route path='/' element={<Layout />}>
-            <Route index element={<Home />} />
+          <Route  element={<Layout />}>
+            <Route path='/'  exact element={<Home />} />
             <Route path='/About'  element={<About />} />
             <Route path='/Register' element={<Register />} />
             <Route path='/GCS' element={<GCS />} />
@@ -46,9 +46,9 @@ function App() {
             <Route path='/Issues' element={<Issues />} />
             <Route path='/ADTstatus' element={<ADTstatus />} />
             <Route path='/Ventilation' element={<Ventilation />} />
-            <Route path='/Plan' element={<Plan />} />
-            
+            <Route path='/Plan' element={<Plan />} />            
           </Route>
+
           <Route path='/Dashboard' element={<Dashboard/>}/>
           <Route path='/Login' element={<Login/>}/>
       </Routes>    
