@@ -1,7 +1,7 @@
 
 import './App.css';
 import * as React from 'react';
-import {HashRouter, Routes, Route, Link} from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 import Login from "./components/Login.js";
 import Home  from "./components/Home.js";
 import About from "./components/About.js";
@@ -26,31 +26,30 @@ import Dashboard from './components/Dashboard.js';
 
 
 function App() {
-  return (
-      
+  return (      
       <Routes >
-          <Route  element={<Layout />}>
-            <Route path='/'  exact  Component={Home} />
-            <Route path='/About'   Component={About} />
-            <Route path='/Register'  Component={Register} />
-            <Route path='/GCS'  Component={GCS} />
-            <Route path='/Vital'  Component={Vital} />
-            <Route path='/FeverPack' Component={FeverPack} />
-            <Route path='/Lab' Component={Lab} />
-            <Route path='/ABG' Component={ABG} />
-            <Route path='/Surgery' Component={Surgery} />
-            <Route path='/BloodTrans' Component={BloodTrans} />
-            <Route path='/Infusions'  Component={Infusions} />
-            <Route path='/LastIO'  Component={LastIO} />
-            <Route path='/Documents'  Component={Documents} />
-            <Route path='/Issues'  Component={Issues} />
-            <Route path='/ADTstatus' Component={ADTstatus} />
-            <Route path='/Ventilation' Component={Ventilation} />
-            <Route path='/Plan'  Component={Ventilation} />            
+          <Route path='/'  element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path='/About'  element={<About />} />
+            <Route path='/Register' element={<Register />} />
+            <Route path='/GCS' element={<GCS />} />
+            <Route path='/Vital' element={<Vital />} />
+            <Route path='/FeverPack' element={<FeverPack />} />
+            <Route path='/Lab' element={<Lab />} />
+            <Route path='/ABG' element={<ABG />} />
+            <Route path='/Surgery' element={<Surgery />} />
+            <Route path='/BloodTrans' element={<BloodTrans />} />
+            <Route path='/Infusions' element={<Infusions />} />
+            <Route path='/LastIO' element={<LastIO />} />
+            <Route path='/Documents' element={<Documents />} />
+            <Route path='/Issues' element={<Issues />} />
+            <Route path='/ADTstatus' element={<ADTstatus />} />
+            <Route path='/Ventilation' element={<Ventilation />} />
+            <Route path='/Plan' element={<Plan />} />            
           </Route>
 
-          <Route path='/Dashboard' Component={Dashboard} />
-          <Route path='/Login' Component={Login}/>
+          <Route path='/Dashboard' element={<Dashboard/>}/>
+          <Route path='/Login' element={<Login/>}/>
       </Routes>    
   );
 }
